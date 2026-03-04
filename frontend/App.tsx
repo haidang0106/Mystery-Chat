@@ -228,6 +228,16 @@ export default function App() {
                 placeholderTextColor={'#94a3b8'}
                 multiline
                 maxLength={500}
+                onKeyPress={(e) => {
+                  const nativeEvent = e.nativeEvent as any;
+                  // On Web, Enter sends the message. Shift+Enter creates a newline.
+                  if (Platform.OS === 'web' && nativeEvent.key === 'Enter' && !nativeEvent.shiftKey) {
+                    e.preventDefault();
+                    if (currentMessage.trim()) {
+                      handleSendMessage();
+                    }
+                  }
+                }}
               />
               <TouchableOpacity style={styles.emojiButton}>
                 <MaterialIcons name="emoji-emotions" size={24} color={'#94a3b8'} />
@@ -313,7 +323,7 @@ export default function App() {
                 keyboardType="numeric"
                 placeholderTextColor={THEME.textMuted}
                 value={profile.age}
-                onChangeText={text => setProfile(prev => ({ ...prev, age: text }))}
+                onChangeText={text => setProfile(prev => ({ ...prev, age: text.replace(/[^0-9]/g, '') }))}
               />
 
               <Text style={styles.formLabel}>Giới tính của bạn</Text>
