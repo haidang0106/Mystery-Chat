@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mystery Chat - Màn hình Chào mừng</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#3713ec",
+          "background-light": "#f6f6f8",
+          "background-dark": "#131022",
+        },
+        fontFamily: {
+          "display": ["Plus Jakarta Sans", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30 min-h-screen flex flex-col justify-center relative overflow-hidden">
+<!-- Abstract Background Elements -->
+<div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-primary/20 blur-[100px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full bg-indigo-500/20 blur-[120px]"></div>
+</div>
+<div class="relative z-10 flex h-auto min-h-screen w-full flex-col @container justify-between py-12 px-6">
+<!-- Header / Small Logo -->
+<div class="flex items-center justify-center w-full pt-4">
+<h2 class="text-xl font-bold leading-tight tracking-tight text-center bg-clip-text text-transparent bg-gradient-to-r from-primary to-indigo-400">Mystery Chat</h2>
+</div>
+<!-- Main Content -->
+<div class="flex flex-col items-center justify-center flex-1 space-y-10">
+<!-- Hero Abstract Graphic -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-indigo-500 rounded-full blur-2xl opacity-40 animate-pulse"></div>
+<div class="relative w-48 h-48 bg-background-dark border border-primary/30 rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(55,19,236,0.3)]">
+<span class="material-symbols-outlined text-[80px] text-primary">forum</span>
+</div>
+</div>
+<!-- Typography -->
+<div class="flex flex-col items-center space-y-4 max-w-sm mx-auto">
+<h1 class="text-3xl font-bold leading-tight text-center">Kết nối ngẫu nhiên,<br/>trò chuyện chân thực</h1>
+<p class="text-base font-normal leading-relaxed text-slate-400 text-center">Tham gia ẩn danh, an toàn và gặp gỡ những người bạn mới khắp mọi nơi.</p>
+</div>
+</div>
+<!-- Action Area -->
+<div class="flex flex-col items-center w-full space-y-4 pb-8">
+<button class="w-full max-w-sm flex items-center justify-center rounded-xl h-14 bg-primary text-white text-lg font-bold shadow-[0_4px_20px_rgba(55,19,236,0.4)] transition-transform active:scale-95">
+<span class="truncate">Bắt đầu ngay</span>
+<span class="material-symbols-outlined ml-2 text-xl">arrow_forward</span>
+</button>
+<p class="text-sm text-slate-500 text-center px-4">Bằng cách bắt đầu, bạn đồng ý với Điều khoản và Chính sách của chúng tôi.</p>
+</div>
+</div>
+</body></html>

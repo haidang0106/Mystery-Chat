@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Danh sách Tin nhắn (Inbox)</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden max-w-[480px] mx-auto border-x border-slate-200 dark:border-slate-800">
+<!-- Header -->
+<div class="flex items-center p-4 pb-2 justify-between sticky top-0 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur z-10">
+<div class="flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</div>
+<h2 class="text-lg font-bold leading-tight flex-1 text-center tracking-tight">Inbox</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent gap-2 min-w-0 p-0 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-2xl">tune</span>
+</button>
+</div>
+</div>
+<!-- Search -->
+<div class="px-4 py-3">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-slate-100 dark:bg-slate-800/50 focus-within:ring-2 focus-within:ring-primary transition-all">
+<div class="flex items-center justify-center pl-4 text-slate-500">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg bg-transparent border-none focus:outline-0 focus:ring-0 focus:border-none h-full placeholder:text-slate-500 px-4 pl-2 text-base font-medium leading-normal" placeholder="Search conversations" value=""/>
+</div>
+</label>
+</div>
+<!-- Tabs -->
+<div class="pb-1">
+<div class="flex border-b border-slate-200 dark:border-slate-800 px-4 gap-8">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-[13px] pt-4" href="#">
+<p class="text-sm font-bold leading-normal tracking-wide text-primary">Active</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-transparent pb-[13px] pt-4 hover:border-slate-300 dark:hover:border-slate-600 transition-colors" href="#">
+<p class="text-sm font-bold leading-normal tracking-wide text-slate-500 dark:text-slate-400">Past</p>
+</a>
+</div>
+</div>
+<!-- Chat List -->
+<div class="flex-1 overflow-y-auto pb-24">
+<!-- Item 1 (Unread) -->
+<a class="flex gap-4 px-4 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group relative" href="#">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"></div>
+<div class="flex items-start gap-4 pl-2 w-full">
+<div class="relative shrink-0">
+<div class="bg-gradient-to-br from-indigo-400 to-purple-500 aspect-square bg-cover rounded-full h-[60px] w-[60px] flex items-center justify-center text-white text-xl font-bold shadow-inner">
+                            N1
+                        </div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<p class="text-base font-bold leading-normal truncate group-hover:text-primary transition-colors">Người lạ #123</p>
+<p class="text-primary font-semibold text-xs whitespace-nowrap ml-2">10:45 AM</p>
+</div>
+<p class="text-sm font-semibold leading-normal truncate text-slate-800 dark:text-slate-200">Are you still there?</p>
+</div>
+</div>
+</a>
+<!-- Item 2 -->
+<a class="flex gap-4 px-4 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group" href="#">
+<div class="flex items-start gap-4 pl-2 w-full">
+<div class="relative shrink-0">
+<div class="bg-gradient-to-br from-emerald-400 to-teal-500 aspect-square bg-cover rounded-full h-[60px] w-[60px] flex items-center justify-center text-white text-xl font-bold shadow-inner opacity-80">
+                            N8
+                        </div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<p class="text-base font-semibold leading-normal truncate group-hover:text-primary transition-colors">Người lạ #892</p>
+<p class="text-slate-400 dark:text-slate-500 text-xs whitespace-nowrap ml-2">Yesterday</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-slate-400">done_all</span>
+<p class="text-sm font-normal leading-normal truncate text-slate-500 dark:text-slate-400">Haha, that's really funny.</p>
+</div>
+</div>
+</div>
+</a>
+<!-- Item 3 -->
+<a class="flex gap-4 px-4 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group" href="#">
+<div class="flex items-start gap-4 pl-2 w-full">
+<div class="relative shrink-0">
+<div class="bg-gradient-to-br from-rose-400 to-orange-400 aspect-square bg-cover rounded-full h-[60px] w-[60px] flex items-center justify-center text-white text-xl font-bold shadow-inner opacity-80">
+                            N4
+                        </div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<p class="text-base font-semibold leading-normal truncate group-hover:text-primary transition-colors">Người lạ #405</p>
+<p class="text-slate-400 dark:text-slate-500 text-xs whitespace-nowrap ml-2">Mon</p>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-slate-400">done</span>
+<p class="text-sm font-normal leading-normal truncate text-slate-500 dark:text-slate-400">Let's chat again later.</p>
+</div>
+</div>
+</div>
+</a>
+<!-- Item 4 (Unread) -->
+<a class="flex gap-4 px-4 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group relative" href="#">
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-primary rounded-r-full"></div>
+<div class="flex items-start gap-4 pl-2 w-full">
+<div class="relative shrink-0">
+<div class="bg-gradient-to-br from-blue-400 to-cyan-500 aspect-square bg-cover rounded-full h-[60px] w-[60px] flex items-center justify-center text-white text-xl font-bold shadow-inner">
+                            N9
+                        </div>
+<div class="absolute bottom-0 right-0 w-4 h-4 bg-green-500 border-2 border-background-light dark:border-background-dark rounded-full"></div>
+<div class="absolute -top-1 -right-1 bg-primary text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-background-light dark:border-background-dark">2</div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<p class="text-base font-bold leading-normal truncate group-hover:text-primary transition-colors">Người lạ #911</p>
+<p class="text-primary font-semibold text-xs whitespace-nowrap ml-2">Sun</p>
+</div>
+<p class="text-sm font-semibold leading-normal truncate text-slate-800 dark:text-slate-200">What are your hobbies?</p>
+</div>
+</div>
+</a>
+<!-- Item 5 -->
+<a class="flex gap-4 px-4 py-4 justify-between hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors cursor-pointer group opacity-70 hover:opacity-100" href="#">
+<div class="flex items-start gap-4 pl-2 w-full">
+<div class="relative shrink-0">
+<div class="bg-slate-200 dark:bg-slate-700 aspect-square bg-cover rounded-full h-[60px] w-[60px] flex items-center justify-center text-slate-500 dark:text-slate-400 text-xl font-bold shadow-inner">
+                            N2
+                        </div>
+</div>
+<div class="flex flex-1 flex-col justify-center min-w-0">
+<div class="flex justify-between items-baseline mb-1">
+<p class="text-base font-medium leading-normal truncate text-slate-500 dark:text-slate-400">Người lạ #222</p>
+<p class="text-slate-400 dark:text-slate-600 text-xs whitespace-nowrap ml-2">Oct 12</p>
+</div>
+<p class="text-sm font-normal leading-normal truncate text-slate-400 dark:text-slate-500 italic">User has left the chat</p>
+</div>
+</div>
+</a>
+<!-- Divider -->
+<div class="h-8 flex items-center justify-center">
+<div class="w-12 h-1 bg-slate-200 dark:bg-slate-800 rounded-full"></div>
+</div>
+</div>
+<!-- Bottom Navigation -->
+<div class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto flex gap-2 border-t border-slate-200 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur px-4 pb-6 pt-3 z-20">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">favorite</span>
+</div>
+<p class="text-[11px] font-semibold leading-normal tracking-wide">Match</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 items-center justify-center relative">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="absolute top-0 right-1 w-2.5 h-2.5 bg-rose-500 border-2 border-background-light dark:border-background-dark rounded-full"></span>
+</div>
+<p class="text-[11px] font-bold leading-normal tracking-wide">Inbox</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">person</span>
+</div>
+<p class="text-[11px] font-semibold leading-normal tracking-wide">Profile</p>
+</a>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giao diện Trò chuyện</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3713ec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#131022",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex justify-center">
+<div class="relative flex h-auto min-h-screen w-full max-w-[480px] flex-col bg-background-light dark:bg-background-dark shadow-xl overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-10 flex items-center bg-background-light dark:bg-background-dark/95 backdrop-blur-sm p-4 pb-2 justify-between border-b border-slate-200 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-slate-700 dark:text-slate-300">arrow_back</span>
+</button>
+<div class="bg-center bg-no-repeat bg-cover rounded-full size-10 shrink-0" data-alt="Anonymous avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBeLw2iqHMxEtcSojZl4k7PTM6oYlh7E6Dypznc_NpZ1T_75C-Atok_AliZkmiAW-SO28OwOFVG9XgV15IZaX28aLnjYGsXdwSTTkKJifgj-ECcmLqeWJzzUgOtpM9A3NYmx2sO-zdnbij-1J1exuVs0FjKM3ZEsqgJsLX2YX8s6eLYG9_l1pTcmmHkv2JNOK4VoEP9gML4zuTOLrXC6GChyGw_wZdLwVD46abmWRJJtfy2z2_bQ4uwQqnT3QpqxgP8KgNFB2J2fy8");'></div>
+<h2 class="text-slate-900 dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">Người lạ ẩn danh</h2>
+</div>
+<div class="flex items-center">
+<button class="text-primary font-bold px-3 py-1.5 rounded-lg hover:bg-primary/10 transition-colors">Kết thúc</button>
+</div>
+</div>
+<!-- Chat Area -->
+<div class="flex-1 flex flex-col p-4 gap-4 overflow-y-auto">
+<!-- System Message -->
+<div class="flex justify-center my-2">
+<span class="text-xs text-slate-500 dark:text-slate-400 bg-slate-200 dark:bg-slate-800 px-3 py-1 rounded-full">Cuộc trò chuyện đã bắt đầu</span>
+</div>
+<!-- Message received -->
+<div class="flex items-end gap-3">
+<div class="bg-center bg-no-repeat bg-cover rounded-full w-8 h-8 shrink-0" data-alt="Anonymous avatar small" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTI9gV6j2lneTMosDKdUMuIZ-3G9gVrJOwmR9rfvXb7dbH6VIu4_dYpMiv-FukXZ69ofF1Eys78gkxWc5ugPEpDIkBDsSJAX7FraezkYM2PxxvvgRnpmZA2YL_eODzGwf136CBphXyMtj5aSEJjOmdak69zElcLLCRXLtcHkDCDZKQauBB2Hdhd98-xmMVle3gzWKCZtOfi1e-fMzbWBAJm1iJAcaxzfAxZRxss-fWXgze89vhU1GPKULbBQS7nDSyPxDbtJaVO3E");'></div>
+<div class="flex flex-col gap-1 items-start">
+<p class="text-slate-500 dark:text-slate-400 text-xs ml-1">Người lạ ẩn danh, 10:05</p>
+<p class="text-base font-normal leading-normal max-w-[280px] rounded-2xl rounded-bl-sm px-4 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-slate-100 dark:border-slate-700">Chào bạn, mình mới dùng app này.</p>
+</div>
+</div>
+<!-- Message sent -->
+<div class="flex items-end gap-3 justify-end mt-2">
+<div class="flex flex-col gap-1 items-end">
+<p class="text-slate-500 dark:text-slate-400 text-xs mr-1">10:06</p>
+<p class="text-base font-normal leading-normal max-w-[280px] rounded-2xl rounded-br-sm px-4 py-2.5 bg-primary text-white shadow-sm">Chào bạn, rất vui được làm quen!</p>
+</div>
+</div>
+<!-- Message received -->
+<div class="flex items-end gap-3 mt-2">
+<div class="bg-center bg-no-repeat bg-cover rounded-full w-8 h-8 shrink-0 opacity-0"></div> <!-- Placeholder for alignment -->
+<div class="flex flex-col gap-1 items-start">
+<p class="text-base font-normal leading-normal max-w-[280px] rounded-2xl px-4 py-2.5 bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 shadow-sm border border-slate-100 dark:border-slate-700">Bạn đang làm gì đó?</p>
+</div>
+</div>
+</div>
+<!-- Input Area -->
+<div class="sticky bottom-0 bg-background-light dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-3 pb-safe">
+<div class="flex items-end gap-2 @container">
+<button class="flex items-center justify-center p-2.5 text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary transition-colors shrink-0">
+<span class="material-symbols-outlined">add_circle</span>
+</button>
+<div class="flex flex-1 items-center bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 min-h-[44px]">
+<textarea class="w-full bg-transparent text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-0 border-none resize-none py-2.5 px-4 text-base max-h-24 overflow-y-auto" placeholder="Nhập tin nhắn..." rows="1"></textarea>
+<div class="flex items-center pr-2 shrink-0">
+<button class="flex items-center justify-center p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+</div>
+</div>
+<div class="flex items-center shrink-0">
+<!-- Mic button (default) -->
+<button class="flex items-center justify-center p-3 rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined text-xl">mic</span>
+</button>
+<!-- Send button (would show when text is entered) -->
+<!-- <button class="flex items-center justify-center p-3 rounded-full bg-primary text-white shadow-md hover:bg-primary/90 transition-colors">
+                        <span class="material-symbols-outlined text-xl">send</span>
+                    </button> -->
+</div>
+</div>
+</div>
+</div>
+</body></html>
